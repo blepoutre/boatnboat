@@ -1,0 +1,12 @@
+<h1><strong>See all the boats</strong></h1>
+
+<div class= container>
+<ul>
+ <li> What a boat</li>
+  <% @boats.each do |boat| %>
+  <li><%= boat.name %></li>
+  <% end %>
+  </ul>
+</div>
+
+<%= link_to "New boat", new_boat_path %>
