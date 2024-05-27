@@ -1,13 +1,8 @@
 <div class="container">
   <h1 class="my-4">Bienvenu sur la show</h1>
-    <% @boat.category.each do |categorized| %>
-    <ul>
-      <li>
-        <h2><%= categorized.name %></h2>
+        <h2><%= @boat.name %></h2>
         <ul>
-          <li><%= categorized.category %></li>
-          <li><%= categorized.price %></li>
+          <li><%= @boat.category %></li>
+          <li><%= @boat.price %></li>
         </ul>
-      </li>
-    </ul>
 </div>
