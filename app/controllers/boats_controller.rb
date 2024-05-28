@@ -22,7 +22,7 @@ class BoatsController < ApplicationController
     end
   end
 
-    def edit
+  def edit
     @boats = boats.find(params[:id])
   end
 

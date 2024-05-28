@@ -1,0 +1,12 @@
+<h1><strong> All the bookings</strong></h1>
+
+<div class= container>
+<ul>
+  <% @bookings.each do |booking| %>
+  <li><%= booking.begin_date %></li>
+  <li><%= booking.end_date %></li>
+  <li><%= booking.status %></li>
+  <%= link_to "see a reservation", boat_booking_path(booking) %>
+  <% end %>
+  </ul>
+</div>
