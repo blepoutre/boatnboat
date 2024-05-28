@@ -38,7 +38,7 @@ class BoatsController < ApplicationController
   def destroy
     @boat = Boat.find(params[:id])
     @boat.destroy
-    redirect_to boat_path(@boat), status: :see_other
+    redirect_to boats_path, status: :see_other
   end
 
   private

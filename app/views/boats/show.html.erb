@@ -5,5 +5,5 @@
           <li><%= @boat.category %></li>
           <li><%= @boat.price %></li>
         </ul>
-        <%= link_to "Delete", boat_path %>
+        <%= link_to "Delete", boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>
