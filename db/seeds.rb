@@ -8,23 +8,25 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+User.destroy_all
+
 user1 = User.create(
   email: "aline@gmail.com",
-  encrypted_password: "password"
+  password: "password"
 )
-user1.save
+user1.save!
 user2 = User.create(
   email: "benjamin@gmail.com",
-  encrypted_password: "password"
+  password: "password"
 )
 user2.save
 user3 = User.create(
   email: "kevin@gmail.com",
-  encrypted_password: "password"
+  password: "password"
 )
 user3.save
 user4 = User.create(
   email: "mathys@gmail.com",
-  encrypted_password: "password"
+  password: "password"
 )
 user4.save
