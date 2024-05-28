@@ -21,6 +21,7 @@ class BoatsController < ApplicationController
     end
   end
 
+
   def edit
     @boats = boats.find(params[:id])
   end
