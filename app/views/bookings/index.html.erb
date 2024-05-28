@@ -6,7 +6,8 @@
   <li><%= booking.begin_date %></li>
   <li><%= booking.end_date %></li>
   <li><%= booking.status %></li>
-  <%= link_to "see a reservation", boat_booking_path(booking) %>
+  <li><%= booking.id %></li>
+  <%= link_to "see a reservation", booking_path(booking) %>
   <% end %>
   </ul>
 </div>

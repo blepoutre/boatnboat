@@ -4,7 +4,9 @@
         <ul>
           <li><%= @boat.category %></li>
           <li><%= @boat.price %></li>
-          <%= link_to "See all reservation(s) for this boat", boat_bookings_path(@boat) %>
+          <%= link_to "See all reservation(s) for this boat", boat_bookings_path(@boat.id) %>
+          <%= link_to "Book this boat", new_boat_booking_path(@boat)%>
         </ul>
         <%= link_to "Delete", boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <%= link_to "Home", boats_path %>
 </div>

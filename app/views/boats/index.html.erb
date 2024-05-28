@@ -2,9 +2,8 @@
 
 <div class= container>
 <ul>
- <li> What a boat</li>
   <% @boats.each do |boat| %>
-  <li><%= boat.name %></li>
+  <li><%= link_to boat.name, boat_path(boat) %></li>
   <% end %>
   </ul>
 </div>
