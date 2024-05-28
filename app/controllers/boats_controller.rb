@@ -3,7 +3,7 @@ class BoatsController < ApplicationController
   def index
     @boats = Boat.all
   end
-  
+
   def show
     @boat = Boat.find(params[:id])
   end
@@ -21,8 +21,8 @@ class BoatsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
-    def edit
+
+  def edit
     @boats = boats.find(params[:id])
   end
 
@@ -41,5 +41,4 @@ class BoatsController < ApplicationController
   def boat_params
     params.require(:boat).permit(:name, :category, :price, :user_id)
   end
-
 end
