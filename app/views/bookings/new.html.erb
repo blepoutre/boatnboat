@@ -1,0 +1,8 @@
+<h1><strong> Book your boat's experience here </strong></h1>
+
+<%= simple_form_for [@user, @boat] do |f| %>
+  <%= f.input :begin_date %>
+  <%= f.input :end_date %>
+
+  <%= f.submit %>
+<% end %>
