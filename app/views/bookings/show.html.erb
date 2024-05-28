@@ -1,0 +1,7 @@
+<h1><%= @booking.boat.name %></h1>
+<ul>
+<li><%= @booking.begin_date %></li>
+<li><%= @booking.end_date %></li>
+<li><%= @booking.status %></li>
+</ul>
+<%= link_to "Go to this boat", boat_path(@booking.boat_id) %>

@@ -4,5 +4,6 @@
         <ul>
           <li><%= @boat.category %></li>
           <li><%= @boat.price %></li>
+          <%= link_to "See all reservation(s) for this boat", boat_bookings_path(@boat) %>
         </ul>
 </div>
