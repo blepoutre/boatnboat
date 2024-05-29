@@ -4,12 +4,15 @@
   border-radius: 4px;
   background: #5591C5;
   transition: background 0.3s ease;
-  max-width: 300px;
-  display: flex;
-  justify-content: center;
 }
 
 .btn-flat:hover {
   background: #0F3596;
   color: #F3F6E7;
+}
+
+.btn-show {
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
 }
