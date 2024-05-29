@@ -99,20 +99,13 @@
   border-radius: 8px;
   background: $beige;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 20px;
 }
 
 .card-category a {
   position: absolute;
-  top: 218px;
-  right: 200px;
-}
-
-.show-navbtn {
-  color: $blue-principle;
-  background: white;
-  border: solid 0.5px $blue-black;
-  padding: 10px;
-  border-radius: 4px;
+  top: 240px;
+  right: 210px;
 }
 
 .card-category h1 {
