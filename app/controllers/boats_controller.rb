@@ -2,6 +2,7 @@ class BoatsController < ApplicationController
 
   def index
     @boats = Boat.all
+    current_user
   end
 
   def show
