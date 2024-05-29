@@ -1,6 +1,8 @@
-<%= simple_form_for [@user, @boat] do |f| %>
+<%= simple_form_for [@user, @boat], html: {class:"mt-5"} do |f| %>
   <%= f.input :name %>
   <%= f.input :category, collection: Boat::CATEGORY %>
   <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :picture_url %>
   <%= f.submit %>
 <% end %>
