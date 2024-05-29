@@ -1,4 +1,4 @@
-<div id="boat-show" class="d-flex container w-75 justify-content-center flex-column">
+<div id="boat-show" class="d-flex container w-50 justify-content-center flex-column">
   <div class="card-category  my-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.burgessyachts.com/media-library/media/burgess/homepage/new%20website%20images/buy/phoenix_2_00006069_vb1073819_3840x2560.jpg?width=1651&height=1297&rmode=crop&format=webp&quality=60&v=202309141650)">
     <% if current_user == @boat.user %>
       <%= link_to boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
