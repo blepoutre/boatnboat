@@ -1,12 +1,19 @@
-<div class="container">
-  <h1 class="my-4">Bienvenu sur la show</h1>
-        <h2><%= @boat.name %></h2>
-        <ul>
-          <li><%= @boat.category %></li>
-          <li><%= @boat.price %></li>
-          <%= link_to "See all reservation(s) for this boat", boat_bookings_path(@boat.id) %>
-          <%= link_to "Book this boat", new_boat_booking_path(@boat)%>
-        </ul>
-        <%= link_to "Delete", boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        <%= link_to "Home", boats_path %>
+<div id="boat-show" class="d-flex container w-50 justify-content-center flex-column">
+  <div class="card-category  my-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.burgessyachts.com/media-library/media/burgess/homepage/new%20website%20images/buy/phoenix_2_00006069_vb1073819_3840x2560.jpg?width=1651&height=1297&rmode=crop&format=webp&quality=60&v=202309141650)">
+    <% if current_user == @boat.user %>
+      <%= link_to boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-solid fa-ban" style="color: red"></i>
+      <% end %>
+    <% end %>
+    <h1 class="my-4"><%= @boat.name %></h1>
+  </div>
+    <h2>Description</h2>
+    <p><%= @boat.description %></p>
+    <p>Category : <%= @boat.category %></p>
+    <p><%= @boat.price %> €</p>
+      <% if current_user == @boat.user %>
+        <%= link_to "See all reservation(s) for this boat", boat_bookings_path(@boat.id), class: "btn-flat" %>
+      <% else %>
+        <%= link_to "Book this boat", new_boat_booking_path(@boat), class: "btn-flat" %>
+      <% end %>
 </div>
