@@ -14,6 +14,6 @@
       <% if current_user == @boat.user %>
         <%= link_to "See all reservation(s) for this boat", boat_bookings_path(@boat.id), class: "btn-flat btn-show" %>
       <% else %>
-        <%= link_to "Book this boat", new_boat_booking_path(@boat), class: "btn-flat btn-show" %>
+        <%= render"modal", list: @booking%>
       <% end %>
 </div>
