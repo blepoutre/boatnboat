@@ -1,7 +1,14 @@
-<h1><%= @booking.boat.name %></h1>
-<ul>
-<li><%= @booking.begin_date %></li>
-<li><%= @booking.end_date %></li>
-<li><%= @booking.status %></li>
-</ul>
-<%= link_to "Go to this boat", boat_path(@booking.boat_id) %>
+<div class= container>
+<div class="cards">
+  <div class="card-trip">
+   <img src= <%= @booking.boat.picture_url %> />
+   <div class="card-product-infos">
+   <h1><%= @booking.boat.name %></h1>
+    <h4>Détails de la reservation </h4>
+      <li>Date d'arrivée <%= @booking.begin_date %></li>
+      <li>Date de fin <%= @booking.end_date %><li>
+      <li>Status <%= @booking.status %></li>
+    </div>
+  </div>
+</div>
+</div>
