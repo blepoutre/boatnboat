@@ -1,5 +1,6 @@
 <div class= container>
 <%# cards grid %>
+
 <div class="cards mt-5">
 <% @boats.each do |boat| %>
     <%# card structure %>
@@ -11,9 +12,10 @@
           <h2><%= boat.name %></h2>
           <p><%= boat.description %></p>
         </div>
-          <h2 class="card-trip-pricing"><%= boat.price %>€</h2>
+        <h2 class="card-trip-pricing"><%= boat.price %></h2>
       </div>
     </div>
   <% end %>
 <% end %>
+</div>
 </div>
