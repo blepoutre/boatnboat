@@ -12,7 +12,9 @@
 
   <body>
     <%= render "shared/navbar" %>
-
-    <%= yield %>
+    <div class="fix-footer">
+      <%= yield %>
+    </div>
+    <%= render partial: "shared/footer" %>
   </body>
 </html>
