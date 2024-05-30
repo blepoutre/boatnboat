@@ -14,8 +14,12 @@
     <p>Catégorie : <%= @boat.category %></p>
     <p><%= @boat.price %> €</p>
       <% if current_user == @boat.user %>
-        <%= link_to "Voir toutes les réservations", boat_bookings_path(@boat.id), class: "btn-flat btn-show" %>
+        <div class="show-buttons-container">
+          <%= link_to "Voir toutes les réservations", booking_path(:boat_id), class: "btn-flat btn-show" %>
+          <%= link_to "Editer la fiche descriptive", edit_boat_path(@boat), class: "btn-flat btn-show" %>
+        </div>
       <% else %>
         <%= link_to "Réserver", new_boat_booking_path(@boat), class: "btn-flat btn-show" %>
       <% end %>
+
 </div>
