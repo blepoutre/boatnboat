@@ -2,7 +2,7 @@
   <div class="container">
     <h1><strong>Premier service de location de bateaux entre particuliers !</strong></h1>
     <p><i>Réservez une expérience dans le bateau de vos rêves.</i></p>
-    <a class="btn btn-flat" href="#">Découvrir</a>
+    <a class="btn btn-flat" href="/boats">Découvrir</a>
   </div>
 </div>
 
@@ -18,18 +18,18 @@
       <p class="home-paragraph">Une sélection des derniers bateaux !</p>
   </form>
 
+<div class="cards">
 <% @boats.each do |boat| %>
-  <div class="cards">
     <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <img src= <%= boat.picture_url %> />
       <div class="card-trip-infos">
         <div>
-          <h2><%= boat.name%></h2>
+          <h2><%= link_to boat.name, boat_path(boat) %></h2>
           <p><%= boat.description %></p>
         </div>
-        <h2 class="card-trip-pricing"><%= boat.price %>/h2>
+        <h2 class="card-trip-pricing"><%= boat.price %> </h2>
       </div>
     </div>
   <% end %>
-  </div>
+</div>
 </div>
