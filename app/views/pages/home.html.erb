@@ -20,16 +20,18 @@
 
 <div class="cards">
 <% @boats.each do |boat| %>
+  <%= link_to boat_path(boat) do %>
     <div class="card-trip">
       <img src= <%= boat.picture_url %> />
       <div class="card-trip-infos">
         <div>
-          <h2><%= link_to boat.name, boat_path(boat) %></h2>
+          <h2><%= boat.name %></h2>
           <p><%= boat.description %></p>
         </div>
         <h2 class="card-trip-pricing"><%= boat.price %> </h2>
       </div>
     </div>
   <% end %>
+<% end %>
 </div>
 </div>

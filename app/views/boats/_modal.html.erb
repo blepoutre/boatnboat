@@ -1,0 +1,27 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn-flat btn-show" data-bs-toggle="modal" data-bs-target="#bookingModal">
+  Réserver ce bateau
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModalLabel">Réserver <%= @boat.name %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" data-controller="price-calculator">
+        <h4>Prix par nuit : <%= @boat.price %> €</h4>
+        <%= simple_form_for [@boat, @booking], html: { data: { action: 'input->price-calculator#date' } } do |f| %>
+          <%= f.input :begin_date, input_html: { data: { price_calculator_target: 'calendar' }} %>
+          <%= f.input :end_date %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <%= f.submit "Book this boat", class:"btn-flat"  %>
+      </div>
+        <% end %>
+    </div>
+  </div>
+</div>
