@@ -1,18 +1,18 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn-flat btn-show" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Book this boat
+<button type="button" class="btn-flat btn-show" data-bs-toggle="modal" data-bs-target="#bookingModal">
+  Réserver ce bateau
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Book <%= @boat.name %></h5>
+        <h5 class="modal-title" id="bookingModalLabel">Réserver <%= @boat.name %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" data-controller="price-calculator">
-        <p>Price by night <%= @boat.price %> €</p>
+        <p>Prix par nuit : <%= @boat.price %> €</p>
         <%= simple_form_for [@boat, @booking], html: { data: { action: 'input->price-calculator#date' } } do |f| %>
           <%= f.input :begin_date, input_html: { data: { price_calculator_target: 'calendar' }} %>
           <%= f.input :end_date %>
