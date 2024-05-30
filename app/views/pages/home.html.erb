@@ -26,10 +26,17 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= boat.name %></h2>
+            <div class="cards-description">
           <p><%= boat.description %></p>
+          </div>
         </div>
-        <h2 class="card-trip-pricing"><%= boat.price %> </h2>
+        <h2 class="card-trip-pricing"><%= boat.price %>€</h2>
       </div>
+       <div>
+           <button name="button" type="submit" class="btn btn-flat" href="/boats/:id">
+             Réserver
+           </button>
+          </div>
     </div>
   <% end %>
 <% end %>
