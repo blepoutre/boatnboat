@@ -5,6 +5,12 @@
   grid-gap: 16px;
 }
 
+.cards-description {
+  height: 70px;
+  overflow: hidden;
+  padding: 10px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -46,6 +52,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5%;
+  position: relative;
 }
 
 .card-trip > img {
@@ -72,6 +79,13 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+// Add CSS to card-trip-pricing
+.card-trip-pricing {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
 }
 
 // Card for booking
@@ -105,7 +119,7 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 8px;
 }
 .card-category {
   background-size: cover;

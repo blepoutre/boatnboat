@@ -1,3 +1,4 @@
+
 <div class= container>
 <h1><strong> All the bookings</strong></h1>
 
@@ -14,18 +15,43 @@
   </div>
 </div>
 
-<div class=cards>
-<% @bookings.each do |booking| %>
-    <div class="card-product">
-      <img src= <%= booking.boat.picture_url %> />
-      <div class="card-product-infos">
-        <h2>Réservation pour <%= link_to booking.boat.name, booking_path(booking) %> </h2>
-        <ul>
-        <li>Date d'arrivée <%= booking.begin_date %></li>
-        <li>Date de fin <%= booking.end_date %></li>
-        </ul>
-      </div>
-    </div>
+<div class="container mt-5">
+<h1><strong>Réservation de vos bateaux</strong></h1>
+<div class="cards">
+  <% @boats.each do |boat| %>
+    <% if boat.user_id == current_user.id %>
+      <% @bookings.each do |booking| %>
+          <div class="card-product">
+            <img src= <%= booking.boat.picture_url %> />
+            <div class="card-product-infos">
+              <h2>Réservation pour <%= link_to booking.boat.name, booking_path(booking) %> </h2>
+              <ul>
+              <li>Date d'arrivée <%= booking.begin_date %></li>
+              <li>Date de fin <%= booking.end_date %></li>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+
 <% end %>
+</div>
+
+<hr/>
+
+<h1 class="mt-2 mb-4">Vos réservation(s)</h1>
+<div class="cards">
+    <% @bookings.each do |booking| %>
+          <div class="card-product">
+            <img src= <%= booking.boat.picture_url %> />
+            <div class="card-product-infos">
+              <h2><%= link_to booking.boat.name, booking_path(booking) %></h2>
+              <ul>
+              <li>Date d'arrivée <%= booking.begin_date %></li>
+              <li>Date de fin <%= booking.end_date %></li>
+              </ul>
+            </div>
+          </div>
+    <% end %>
 </div>
 </div>

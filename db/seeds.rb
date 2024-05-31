@@ -17,7 +17,8 @@ user1 = User.create(
 user1.save!
 user2 = User.create(
   email: "benjamin@gmail.com",
-  password: "password"
+  password: "password",
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/blepoutre"
 )
 user2.save
 user3 = User.create(

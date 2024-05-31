@@ -14,21 +14,29 @@
   </div>
 </div>
 
-<div class="cards mt-5">
-<% @boats.each do |boat| %>
-    <%# card structure %>
-  <%= link_to boat_path(boat) do %>
-    <div class="card-trip">
-      <img src= <%=boat.picture_url%> />
-        <div class="card-trip-infos">
-        <div>
-          <h2><%= boat.name %></h2>
-          <p><%= boat.description %></p>
+  <div class="cards mt-5">
+    <% @boats.each do |boat| %>
+        <%# card structure %>
+      <%= link_to boat_path(boat) do %>
+        <div class="card-trip">
+          <img src= <%=boat.picture_url%> />
+            <div class="card-trip-infos">
+            <div>
+              <h2><%= boat.name %></h2>
+              <div class="cards-description">
+              <p><%= boat.description %></p>
+              </div>
+            </div>
+          </div>
+              <div>
+                <button name="button" type="submit" class="btn btn-flat" href="/boats/:id">
+                  Réserver
+                </button>
+                <h2 class="card-trip-pricing"><%= boat.price %>€</h2>
+              </div>
+
         </div>
-        <h2 class="card-trip-pricing"><%= boat.price %></h2>
-      </div>
-    </div>
-  <% end %>
-<% end %>
-</div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
