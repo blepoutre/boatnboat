@@ -18,8 +18,10 @@
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="/boats/new">Add a boat</a>
+              <% if !(current_user.nil? ) %>
+                <a class="dropdown-item" href="/boats/new">Ajouter un bateau</a>
+                <a class="dropdown-item" href="/bookings">Réservation</a>
+              <% end %>
               <% if current_user.nil? %>
                 <a class="dropdown-item" href="/users/sign_in">Log in</a>
               <% else %>

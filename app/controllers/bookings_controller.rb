@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    raise
   end
 
   def show
@@ -23,6 +24,8 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @boats = Boat.all
+    current_user
   end
 
   private
