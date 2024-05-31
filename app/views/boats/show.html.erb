@@ -1,5 +1,5 @@
 <div id="boat-show" class="d-flex container w-50 justify-content-center flex-column">
-  <div class="card-category  my-5" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= @boat.picture_url %>">
+  <div class="card-category  my-5" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= @boat.picture_url %>)">
     <div class="trash-icon-container">
       <% if current_user == @boat.user %>
         <%= link_to boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
@@ -15,8 +15,8 @@
     <p><%= @boat.price %> €</p>
       <% if current_user == @boat.user %>
         <div class="show-buttons-container">
-          <%= link_to "Voir toutes les réservations", booking_path(:boat_id), class: "btn-flat btn-show" %>
-          <%= link_to "Editer la fiche descriptive", edit_boat_path(@boat), class: "btn-flat btn-show" %>
+          <%= link_to "Voir toutes les réservations", booking_path(:boat_id), class: "btn btn-flat btn-show" %>
+          <%= link_to "Editer la fiche descriptive", edit_boat_path(@boat), class: "btn btn-flat btn-show" %>
         </div>
       <% else %>
         <%= render"modal", list: @booking%>

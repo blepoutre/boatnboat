@@ -1,8 +1,10 @@
-<h1><strong> Book your boat's experience here </strong></h1>
+<div class="conatiner w-50 mt-5">
+  <h1><strong> Réserver votre aventure en bateau ici : </strong></h1>
 
-<%= simple_form_for [@boat, @booking] do |f| %>
-  <%= f.input :begin_date %>
-  <%= f.input :end_date %>
+  <%= simple_form_for [@boat, @booking] do |f| %>
+    <%= f.input :begin_date %>
+    <%= f.input :end_date %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit label: "Réserver", class: "btn btn-flat" %>
+  <% end %>
+</div>
