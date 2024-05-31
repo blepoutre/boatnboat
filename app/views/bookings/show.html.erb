@@ -1,14 +1,14 @@
-<div class= container>
-<div class="cards">
-  <div class="card-trip">
-   <img src= <%= @booking.boat.picture_url %> />
-   <div class="card-product-infos">
-   <h1><%= @booking.boat.name %></h1>
-    <h4>Détails de la reservation </h4>
-      <li>Date d'arrivée <%= @booking.begin_date %></li>
-      <li>Date de fin <%= @booking.end_date %><li>
-      <li>Status <%= @booking.status %></li>
+<div class="container mt-5">
+  <div class="cards">
+    <div class="card-trip">
+    <img src= <%= @booking.boat.picture_url %> />
+      <div class="card-product-infos">
+        <h1><%= @booking.boat.name %></h1>
+          <h5>Détails de la reservation </h5>
+            <li>Date d'arrivée <%= @booking.begin_date %></li>
+            <li>Date de fin <%= @booking.end_date %></li>
+            <li>Status <%= @booking.status %></li>
+      </div>
     </div>
   </div>
-</div>
 </div>
