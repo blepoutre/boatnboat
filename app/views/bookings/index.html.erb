@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <div class= container>
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
@@ -9,9 +10,68 @@
             placeholder: "Rechercher"
         %>
       <%= submit_tag "Rechercher", name: "", class: "btn btn-flat" %>
+=======
+<div class="container">
+  <h1><strong> All the bookings</strong></h1>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Rechercher"
+          %>
+        <%= submit_tag "Rechercher", name: "", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h1><strong>Réservation de vos bateaux</strong></h1>
+    <div class="cards">
+      <% @boats.each do |boat| %>
+        <% if boat.user_id == current_user.id %>
+          <% @bookings.each do |booking| %>
+              <div class="card-product">
+                <img src= <%= booking.boat.picture_url %> />
+                <div class="card-product-infos">
+                  <h2>Réservation pour <%= link_to booking.boat.name, booking_path(booking) %> </h2>
+                  <ul>
+                  <li>Date d'arrivée <%= booking.begin_date %></li>
+                  <li>Date de fin <%= booking.end_date %></li>
+                  </ul>
+                </div>
+              </div>
+            <% end %>
+        <% end %>
+
+>>>>>>> 96fcda8ceaa5bb2aacc8c5dd817c3b6a5e59022d
     <% end %>
+    </div>
+
+    <hr/>
+
+    <h1 class="mt-2 mb-4">Vos réservation(s)</h1>
+    <div class="cards">
+        <% @bookings.each do |booking| %>
+          <% if booking.user_id == current_user.id %>
+              <div class="card-product">
+                <img src= <%= booking.boat.picture_url %> />
+                <div class="card-product-infos">
+                  <h2><%= link_to booking.boat.name, booking_path(booking) %></h2>
+                  <ul>
+                  <li>Date d'arrivée <%= booking.begin_date %></li>
+                  <li>Date de fin <%= booking.end_date %></li>
+                  </ul>
+                </div>
+              </div>
+          <% end %>
+        <% end %>
+    </div>
   </div>
 </div>
+<<<<<<< HEAD
 <h1><strong> All the bookings</strong></h1>
 <div class="container mt-5">
 <h1><strong>Réservation de vos bateaux</strong></h1>
@@ -56,3 +116,5 @@
 </div>
 </div>
 </div>
+=======
+>>>>>>> 96fcda8ceaa5bb2aacc8c5dd817c3b6a5e59022d

@@ -10,7 +10,14 @@ class BoatsController < ApplicationController
         lng: boat.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: { boat: boat })
       }
+<<<<<<< HEAD
     end
+=======
+
+    end
+
+
+>>>>>>> 96fcda8ceaa5bb2aacc8c5dd817c3b6a5e59022d
     if params[:query].present?
       sql_subquery = <<~SQL
         boats.name ILIKE :query
