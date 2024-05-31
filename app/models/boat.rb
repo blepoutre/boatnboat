@@ -4,6 +4,7 @@ class Boat < ApplicationRecord
   belongs_to :user
   CATEGORY = %w(Hydroglisser Canot Catamaran Yatch Péniche)
   validates :category, inclusion: { in: CATEGORY }
+  validates :name, :description, :category, :price, :picture_url, presence: true
 
     pg_search_scope :search_global,
   against: [ :name, :description, :category ],
