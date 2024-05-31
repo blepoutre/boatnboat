@@ -30,3 +30,16 @@ user4 = User.create(
   password: "password"
 )
 user4.save
+
+
+Boat.destroy_all
+
+10.times do
+  boat = Boat.new(
+    name: Faker::Artist.name,
+    category: BOAT::CATEGORY.sample,
+    price: (100..1000),
+    address: ,
+  )
+  boat.save!
+end
