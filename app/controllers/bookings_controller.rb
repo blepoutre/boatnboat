@@ -11,10 +11,11 @@ class BookingsController < ApplicationController
     @booking.boat = @boat
     @booking.user = @user
     if @booking.save
-      redirect_to boat_bookings_path(@booking.boat_id)
+      redirect_to boats_path
     else
       render :new, status: :unprocessable_entity
     end
+    # raise
   end
 
   def show
@@ -23,6 +24,8 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @boats = Boat.all
+    current_user
   end
 
   private
