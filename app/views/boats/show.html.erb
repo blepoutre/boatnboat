@@ -15,8 +15,8 @@
     <p><%= @boat.price %> €</p>
       <% if current_user == @boat.user %>
         <div class="show-buttons-container">
-          <%= link_to "Voir toutes les réservations", booking_path(:boat_id), class: "btn-flat btn-show" %>
-          <%= link_to "Editer la fiche descriptive", edit_boat_path(@boat), class: "btn-flat btn-show" %>
+          <%= link_to "Voir toutes les réservations", booking_path(:boat_id), class: "btn btn-flat btn-show" %>
+          <%= link_to "Editer la fiche descriptive", edit_boat_path(@boat), class: "btn btn-flat btn-show" %>
         </div>
       <% else %>
         <%= render"modal", list: @booking%>
