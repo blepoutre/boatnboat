@@ -9,19 +9,23 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="bookingModalLabel">Réserver <%= @boat.name %></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
       </div>
       <div class="modal-body" data-controller="price-calculator">
         <h4>Prix par nuit : <%= @boat.price %> €</h4>
         <%= simple_form_for [@boat, @booking], html: { data: { action: 'input->price-calculator#date' } } do |f| %>
-          <%= f.input :begin_date, input_html: { data: { price_calculator_target: 'calendar' }} %>
-          <%= f.input :end_date %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <%= f.submit "Book this boat", class:"btn-flat"  %>
-      </div>
+          <%= f.input :begin_date, as: :string, input_html: { data:
+                { price_calculator_target: 'calendar',
+                  controller: "datepicker" }} %>
+          <%= f.input :end_date, as: :string, input_html: { data:
+                { price_calculator_target: 'calendar',
+                  controller: "datepicker" }} %>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <%= f.submit "Réserver ce bateau", class:"btn btn-flat" %>
+          </div>
         <% end %>
+      </div>
     </div>
   </div>
 </div>
