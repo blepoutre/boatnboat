@@ -23,7 +23,6 @@
   <p class="home-paragraph ms-3">Une sélection des derniers bateaux !</p>
   <div class="cards">
   <% @boats.each do |boat| %>
-    <%= link_to boat_path(boat) do %>
       <div class="card-trip">
         <img src= <%= boat.picture_url %> />
         <div class="card-trip-infos">
@@ -33,17 +32,15 @@
             <p><%= boat.description %></p>
             </div>
           </div>
+          <h2 class="card-trip-pricing"><%= boat.price %>€</h2>
         </div>
         <div>
           <% if current_user.nil? %>
             <%= link_to "Réserver", new_user_session_path, class: "btn btn-flat" %>
           <% else %>
-            <%= link_to "Réserver", boat_path(:boat_id), class: "btn btn-flat" %>
+            <%= link_to "Réserver", boat_path(boat.id), class: "btn btn-flat" %>
           <% end %>
-          <h2 class="card-trip-pricing"><%= boat.price %>€</h2>
         </div>
       </div>
-    <% end %>
   <% end %>
-  </div>
 </div>

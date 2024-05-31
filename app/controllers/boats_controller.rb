@@ -8,9 +8,9 @@ class BoatsController < ApplicationController
       {
         lat: boat.latitude,
         lng: boat.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {boat: boat})
+        info_window_html: render_to_string(partial: "info_window", locals: { boat: boat })
       }
-
+    end
     if params[:query].present?
       sql_subquery = <<~SQL
         boats.name ILIKE :query
@@ -19,7 +19,6 @@ class BoatsController < ApplicationController
         OR boats.description ILIKE :query
       SQL
       @boats = @boats.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
-
     end
   end
 
