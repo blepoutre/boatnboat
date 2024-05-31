@@ -5,6 +5,12 @@
   grid-gap: 16px;
 }
 
+#cards-status {
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+}
+
 .cards-description {
   height: 70px;
   overflow: hidden;
@@ -51,7 +57,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5%;
+  border-radius: 8px;
   position: relative;
 }
 
@@ -121,6 +127,11 @@
 .card-product .card-product-infos {
   padding: 8px;
 }
+
+.card-product-infos {
+  position: relative;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
