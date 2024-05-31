@@ -42,6 +42,7 @@
 <h1 class="mt-2 mb-4">Vos réservation(s)</h1>
 <div class="cards">
     <% @bookings.each do |booking| %>
+      <% if booking.user_id == current_user.id %>
           <div class="card-product">
             <img src= <%= booking.boat.picture_url %> />
             <div class="card-product-infos">
@@ -52,6 +53,7 @@
               </ul>
             </div>
           </div>
+      <% end %>
     <% end %>
 </div>
 </div>

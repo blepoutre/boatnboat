@@ -2,11 +2,14 @@ class BoatsController < ApplicationController
 
   def index
     @boats = Boat.all
-    # current_user
+    current_user
 
-    #   sql= "name ILIKE :query OR description ILIKE :query OR category ILIKE :query"
-    #   @boats = @boats.where(sql, query:"%#{params[:query]}%")
-    # end
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {boat: boat})
+      }
 
     if params[:query].present?
       sql_subquery = <<~SQL
@@ -16,6 +19,7 @@ class BoatsController < ApplicationController
         OR boats.description ILIKE :query
       SQL
       @boats = @boats.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
+
     end
   end
 
@@ -61,6 +65,6 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :category, :price, :user_id, :description, :picture_url)
+    params.require(:boat).permit(:name, :category, :price, :user_id, :description, :picture_url, :address)
   end
 end
