@@ -11,6 +11,9 @@ class BoatsController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {boat: boat})
       }
 
+    end
+
+
     if params[:query].present?
       sql_subquery = <<~SQL
         boats.name ILIKE :query
