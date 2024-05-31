@@ -1,3 +1,20 @@
+
+<div class= container>
+<h1><strong> All the bookings</strong></h1>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Rechercher"
+        %>
+      <%= submit_tag "Rechercher", name: "", class: "btn btn-flat" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="container mt-5">
 <h1><strong>Réservation de vos bateaux</strong></h1>
 <div class="cards">
@@ -16,6 +33,7 @@
           </div>
         <% end %>
     <% end %>
+
 <% end %>
 </div>
 
