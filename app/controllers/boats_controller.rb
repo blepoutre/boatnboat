@@ -10,11 +10,12 @@ class BoatsController < ApplicationController
 
     if params[:query].present?
       sql_subquery = <<~SQL
-        boats.name @@ :query
-        OR boats.category @@ :query
-        OR users.email @@ :query
+        boats.name ILIKE :query
+        OR boats.category ILIKE :query
+        OR users.username ILIKE :query
+        OR boats.description ILIKE :query
       SQL
-      @boats = @boats.joins(:user).where(sql_subquery, query: params[:query])
+      @boats = @boats.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
