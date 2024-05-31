@@ -2,7 +2,20 @@ class BoatsController < ApplicationController
 
   def index
     @boats = Boat.all
-    current_user
+    # current_user
+
+    #   sql= "name ILIKE :query OR description ILIKE :query OR category ILIKE :query"
+    #   @boats = @boats.where(sql, query:"%#{params[:query]}%")
+    # end
+
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        boats.name @@ :query
+        OR boats.category @@ :query
+        OR users.email @@ :query
+      SQL
+      @boats = @boats.joins(:user).where(sql_subquery, query: params[:query])
+    end
   end
 
   def show

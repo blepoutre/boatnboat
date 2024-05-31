@@ -1,6 +1,19 @@
 <div class= container>
 <%# cards grid %>
 
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Rechercher"
+        %>
+      <%= submit_tag "Rechercher", name: "", class: "btn btn-flat" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="cards mt-5">
 <% @boats.each do |boat| %>
     <%# card structure %>
